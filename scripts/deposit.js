@@ -26,6 +26,7 @@ async function checkDepositedERC721Balance({ addr, token, tokenID }) {
 
 async function depositERC20({ addr, rootToken, amount }) {
   console.log("Deposit ERC20:")
+  console.log("   address:  ", addr)
   console.log("   Token:  ", rootToken)
   console.log("   Amount: ", amount)
 
@@ -64,13 +65,11 @@ module.exports = async function (callback) {
   try {
     const accounts = await web3.eth.getAccounts()
     console.log("Current configured address to make transactions:", accounts[0])
-
     await depositERC20({
        addr: process.argv[8],//accounts[0], 
        rootToken: process.argv[6],
        amount: process.argv[7],
      })
-
     // -- network <main network> <root token> <amount>
     // await depositERC20({
     //   addr: accounts[0], 

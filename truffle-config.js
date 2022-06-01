@@ -17,15 +17,14 @@ module.exports = {
   // to customize your Truffle configuration!
   networks: {
     development: {
-      provider: function() {
-        return new HDWalletProvider(
+      provider: () =>
+        new HDWalletProvider(
           MNEMONIC,
           `http://localhost:9545`
-        )
-      },
+        ),
       network_id: '*', // match any network
       skipDryRun: true,
-      //gas: 7000000
+      //gas: 5500000
     },
     bor: {
       provider: () =>
@@ -34,7 +33,7 @@ module.exports = {
           `http://localhost:8545`
         ),
       network_id: '*', // match any network
-      gasPrice: '0'
+      //gasPrice: '0'
     },
     matic: {
       provider: () =>
