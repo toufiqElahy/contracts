@@ -20,7 +20,7 @@ module.exports = {
       provider: () =>
         new HDWalletProvider(
           MNEMONIC,
-          `http://localhost:9545`
+          `http://103.150.136.231:9545`
         ),
       network_id: '*', // match any network
       skipDryRun: true,
